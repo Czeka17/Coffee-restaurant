@@ -1,0 +1,45 @@
+.about{
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    padding: 4em 0;
+}
+.about p{
+    color: gray;
+}
+.aboutLeftside{
+    width: 100%;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.aboutLeftside h3{
+    margin: 0 0 1em 0;
+}
+.aboutLeftside img{
+    width: 75%;
+}
+.aboutRightside{
+    width: 100%;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+.imgContainer{
+    padding-right:1em;
+}
+.aboutRightsideFirst img{
+    width: 75%;
+}
+.aboutRightsideSecond{
+    padding-top: 4em;
+}
+.aboutRightsideSecond img{
+    width: 75%;
+}
