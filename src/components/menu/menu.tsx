@@ -1,3 +1,4 @@
+import Button from '../ui/button';
 import AppWrapper from '../ui/wrapper';
 import classes from './menu.module.css'
 
@@ -47,11 +48,11 @@ function Menu(){
                         {menuItems.map((item) => <li><p>{item.title}</p><p>{item.description}</p><hr/></li>)}
                     </ul>
                 </div>
-                <div><button className={classes.menuButton}>VIEW ALL MENU</button></div>
+                <div><Button>VIEW ALL MENU</Button></div>
             </div>
             </AppWrapper>
             <div className={classes.menuImage}><div className={classes.menuImageShadow}></div><div className={classes.menuImageItems}>
-            <div className={classes.menuImageText}><h3>CSSpresso: Where Coding Meets Caffeine</h3><p>At CSSpresso, we offer more than just a cup of coffee – we offer an inspiring environment that fuels your productivity and creativity. Our menu features a variety of specialty coffee drinks, snacks, and light bites to help you power through your coding projects. With a quiet and cozy atmosphere, it’s easy to stay focused and get into the zone.</p></div><div><button className={classes.menuButton}>VIEW ALL MENU</button></div></div></div>
+            <div className={classes.menuImageText}><h3>CSSpresso: Where Coding Meets Caffeine</h3><p>At CSSpresso, we offer more than just a cup of coffee – we offer an inspiring environment that fuels your productivity and creativity. Our menu features a variety of specialty coffee drinks, snacks, and light bites to help you power through your coding projects. With a quiet and cozy atmosphere, it’s easy to stay focused and get into the zone.</p></div><div><Button>VIEW ALL MENU</Button></div></div></div>
         </section>
     )
 }

@@ -1,0 +1,32 @@
+.crewSection{
+    padding: 3em 0;
+}
+.crewContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    color: black;
+}
+.crewContainer img{
+    width: 100%;
+    height: 100%;
+}
+.crewLeftSide{
+    width: 50%;
+    align-self: flex-start;
+}
+.crewRightSide{
+    width: 50%;
+}
+.imageContainer{
+    padding: 4em;
+    padding-top: 0;
+}
+.imageContainer1{
+    padding: 4em 4em 4em 0;
+}
+.imageContainer3{
+    padding: 0 0 4em 4em;
+}

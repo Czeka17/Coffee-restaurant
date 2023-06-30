@@ -23,21 +23,6 @@
     width: 40%;
     padding: 1em 0;
 }
-
-.menuButton{
-    background: transparent;
-    border: 2px solid white;
-    padding: 1em 2em;
-    cursor: pointer;
-    color: white;
-    margin-top: 2em;
-    transition: 0.3s;
-    font-weight: bold;
-}
-.menuButton:hover{
-    background: white;
-    color:black;
-}
 .menuImage{
     position: relative;
     background-image: url('../../../public/menu.webp');

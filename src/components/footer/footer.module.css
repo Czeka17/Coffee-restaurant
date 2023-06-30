@@ -1,0 +1,47 @@
+.footer{
+    padding: 3em 0;
+    background: #1A1A1A;
+}
+.footerContainer{
+    padding: 2em 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.footerContainer span{
+    font-weight: bold;
+}
+.footerIcons{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.footerIcons svg:first-child{
+    padding-left: 0;
+}
+.footerIcons svg{
+    fill: #915050;
+    padding: 0.5em;
+    font-size: 1.3rem;
+}
+.footerIcons svg:hover{
+    opacity: 0.75;
+    cursor: pointer;
+}
+.openingHours{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+.openingHours p:first-child{
+    margin-top: 0;
+}
+.openingHours svg{
+    font-size: 1.3rem;
+    margin-right: 1em;
+    padding: 0.2em;
+    background: #915050;
+    border-radius: 50%;
+}
