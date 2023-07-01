@@ -1,0 +1,43 @@
+.menuItems {
+    background: #1A1A1A;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 4em 0;
+  }
+  
+  .menuItems ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .menuItems ul li {
+    width: 30%;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+  .menuReservation{
+    position: relative;
+    background-image: url('../../../public/coffee-reservation.webp');
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+  }
+  .menuReservationShadow{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+  .menuReservationText{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4em 0;
+  }

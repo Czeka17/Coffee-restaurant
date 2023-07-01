@@ -1,5 +1,5 @@
 import classes from './navigation.module.css'
-
+import { NavLink } from 'react-router-dom';
 function Navigation(){
     return(
         <nav className={classes.navigation}>
@@ -8,10 +8,10 @@ function Navigation(){
                     CSSpresso
                 </li>
                 <li>
-                    About us
+                    <NavLink to='/about'>About us</NavLink>
                 </li>
                 <li>
-                    Menu
+                    <NavLink to='/menu'>Menu</NavLink>
                 </li>
                 <li>
                     Contact

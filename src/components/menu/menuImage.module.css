@@ -1,0 +1,13 @@
+
+.menuImage{
+    background-image: url('../../../public/menuSection.webp');
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    justify-content: center;
+}
+.menuImage h3{
+    padding: 3em 0;
+    margin: 0;
+    font-size: 2rem;
+}

@@ -1,29 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Navigation from './components/ui/navigation';
-import Header from './components/header/header';
-import About from './components/about/about';
-import Menu from './components/menu/menu';
-import Coffee from './components/coffee/coffee';
-import Crew from './components/crew/crew';
-import Reviews from './components/reviews/reviews';
-import Reservation from './components/reservation/reservation';
-import Footer from './components/footer/footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import MenuPage from './pages/menuPage';
+import AboutPage from './pages/AboutPage';
 
 function App() {
   return (
-  <>
-   <Navigation/>
-   <Header />
-  <About/>
-  <Menu/>
-  <Coffee/>
-  <Crew/>
-  <Reviews/>
-  <Reservation/>
-  <Footer/>
-  </>
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/menu" element={<MenuPage />} />
+          <Route path='/about' element={<AboutPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
