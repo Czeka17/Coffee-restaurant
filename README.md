@@ -1,3 +1,8 @@
+# Coffee Restaurant page
+
+This is a coffee restaurant page built using ReactJS and TypeScript. It is designed to provide users with information about our coffee restaurant, including menu items, pricing, opening hours, and contact details. The page offers an intuitive and interactive user experience, allowing customers to explore our offerings and get a taste of what our coffee restaurant has to offer.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
