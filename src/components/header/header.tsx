@@ -1,11 +1,24 @@
+
+import AppWrapper from '../ui/wrapper';
 import classes from './header.module.css'
-function Header(){
-    return <header className={classes.header}>
+
+interface HeaderProps{
+    bgi: string,
+    headerParagraph: string;
+    headerText: string;
+}
+function Header({bgi,headerParagraph,headerText}: HeaderProps){
+    const headerStyle = {
+        backgroundImage: `url(${bgi})`,
+      };
+    return <header className={classes.header} style={headerStyle}>
         <div className={classes.shadow}></div>
-        <div className={classes.headerText}>
-            <h1>CSSpresso: The perfect blend of caffeine and code</h1>
-            <p>A haven for IT professionals, CSSpresso is the ideal spot for a much-needed caffeine boost and coding session.</p>
+       <AppWrapper>
+       <div className={classes.headerText}>
+            <h2>{headerText}</h2>
+            <p>{headerParagraph}</p>
         </div>
+       </AppWrapper>
     </header>
 }
 export default Header;

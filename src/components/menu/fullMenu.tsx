@@ -1,12 +1,12 @@
 import AppWrapper from '../ui/wrapper';
 import classes from './fullMenu.module.css'
-import MenuHeader from './menuHeader';
 import MenuImage from './menuImage';
 import { AppetizerMenu, MainCoursesMenu, DessertMenu } from '../../menuLists/menuLists';
 import Button from '../ui/button';
+import Header from '../header/header';
 function FullMenu(){
     return<section>
-        <MenuHeader/>
+        <Header bgi={process.env.PUBLIC_URL + '/menuHeader.webp'} headerText='Our Menu' headerParagraph='Explore our wide variety of coffee options and delicious snacks made with love.'/>
         <MenuImage>Appetizer</MenuImage>
         <div className={classes.menuItems}>
             <AppWrapper>

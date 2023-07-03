@@ -1,0 +1,21 @@
+.app {
+  position: relative;
+  width: 100%;
+}
+
+.pageTransition {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1A1A1A;
+  z-index: 10000;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.transitioning {
+  transform: translateY(0%);
+}

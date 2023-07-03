@@ -2,23 +2,16 @@ import AppWrapper from "../ui/wrapper";
 import classes from "./about-info.module.css";
 import aboutImg from "../../assets/images/coffee-reservation.webp";
 import { BsBox } from "react-icons/bs";
+import AboutSpecialties from "./about-specialties";
+import Team from "./team";
+import Header from "../header/header";
 function AboutInfo() {
 	return (
 		<div>
-			<div className={classes.aboutHeader}>
-				<div className={classes.aboutHeaderShadow}></div>
-				<AppWrapper>
-					<div className={classes.aboutHeaderText}>
-						<h2>About Us</h2>
-						<p>
-							At CSSpresso, we're all about coffee. With a passion for quality
+			<Header bgi={process.env.PUBLIC_URL + '/about-section.webp'} headerText="About Us" headerParagraph="At CSSpresso, we're all about coffee. With a passion for quality
 							and a dedication to excellence, we aim to provide an exceptional
 							coffee experience. Join us to savor the finest brews and discover
-							the true art of coffee craftsmanship.
-						</p>
-					</div>
-				</AppWrapper>
-			</div>
+							the true art of coffee craftsmanship."/>
 			<AppWrapper>
 				<div className={classes.about}>
 					<div className={classes.aboutHeading}>
@@ -76,6 +69,8 @@ function AboutInfo() {
 					</div>
 				</div>
 			</AppWrapper>
+			<AboutSpecialties/>
+			<Team/>
 		</div>
 	);
 }

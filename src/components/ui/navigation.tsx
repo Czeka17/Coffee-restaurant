@@ -5,17 +5,19 @@ function Navigation(){
         <nav className={classes.navigation}>
             <ul className={classes.navigationList}>
                 <li>
-                    CSSpresso
+                    <NavLink className={classes.navLink} to='/'>CSSpresso</NavLink>
+                </li>
+                <div className={classes.navigationListItems}>
+                <li>
+                    <NavLink className={classes.navLink} to='/about'>About us</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/about'>About us</NavLink>
+                    <NavLink className={classes.navLink} to='/menu'>Menu</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/menu'>Menu</NavLink>
+                    <NavLink className={classes.navLink} to='/contact'>Contact</NavLink>
                 </li>
-                <li>
-                    Contact
-                </li>
+                </div>
                 <li>
                     Reservation
                 </li>

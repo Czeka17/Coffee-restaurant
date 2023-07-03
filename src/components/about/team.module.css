@@ -1,0 +1,55 @@
+.teamContainer{
+    padding: 5em 0;
+}
+.teamIntroduction{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #1A1A1A;
+    margin-bottom: 3em;
+}
+.teamIntroduction h3{
+    margin-left: 2.2em;
+}
+.teamIntroduction p{
+    margin-right: 2.2em;
+}
+.teamIntroduction h3, .teamIntroduction p {
+    width: 100%;
+}
+.team{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.teamItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+}
+.teamItem img{
+    width: 80%;
+    height: 80%; 
+    margin-bottom: 1em;  
+}
+.teamItem span{
+    font-weight: bold;
+}
+.socials{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.socials svg{
+    margin: 1em 0.5em;
+    fill: #915050;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.socials svg:hover{
+    fill: #1A1A1A;
+}

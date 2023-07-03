@@ -9,7 +9,7 @@
     margin: 0;
 }
 .headerText{
-    padding: 5em 0;
+    padding: 5em;
     font-size: 1.6rem;
     display: flex;
     flex-direction: column;
@@ -17,6 +17,9 @@
     align-items: center;
     z-index: 2;
     text-align: center;
+}
+.headerText p{
+    font-size: 1rem;
 }
 .shadow{
     position: absolute;

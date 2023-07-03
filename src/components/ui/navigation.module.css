@@ -10,3 +10,19 @@
     justify-content: space-around;
     list-style: none;
 }
+.navigationListItems{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.navLink{
+    text-decoration: none;
+    color: white;
+    padding: 1.5em 1em;
+    transition: 0.3s;
+}
+.navLink:hover{
+    color: #404040;
+    background: white;
+}

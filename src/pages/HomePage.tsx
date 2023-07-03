@@ -1,5 +1,5 @@
 import Navigation from '.././components/ui/navigation';
-import Header from '.././components/header/header';
+import Header from '../components/header/header';
 import About from '.././components/about/about';
 import Menu from '.././components/menu/menu';
 import Coffee from '.././components/coffee/coffee';
@@ -12,7 +12,7 @@ function HomePage() {
   return (
   <>
    <Navigation/>
-   <Header />
+   <Header bgi={process.env.PUBLIC_URL + '/header-_1_.webp'} headerText='CSSpresso: The perfect blend of caffeine and code' headerParagraph='A haven for IT professionals, CSSpresso is the ideal spot for a much-needed caffeine boost and coding session.' />
   <About/>
   <Menu/>
   <Coffee/>
