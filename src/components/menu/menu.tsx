@@ -2,6 +2,7 @@ import Button from '../ui/button';
 import AppWrapper from '../ui/wrapper';
 import classes from './menu.module.css'
 import { MainMenu } from '../../menuLists/menuLists';
+import { Link } from 'react-router-dom';
 function Menu(){
     
     return(
@@ -15,7 +16,7 @@ function Menu(){
                         {MainMenu.map((item) => <li><p>{item.title}</p><p>{item.description}</p><hr/></li>)}
                     </ul>
                 </div>
-                <div><Button>VIEW ALL MENU</Button></div>
+                <div><Link to='/menu'><Button>VIEW ALL MENU</Button></Link></div>
             </div>
             </AppWrapper>
             <div className={classes.menuImage}><div className={classes.menuImageShadow}></div><div className={classes.menuImageItems}>

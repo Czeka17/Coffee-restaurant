@@ -1,0 +1,39 @@
+.reservationContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+.date{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+.hoursList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    gap: 1em;
+  }
+  
+  .hoursList li {
+    width: 20%;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid black;
+  }
+  .reserved{
+    background-color: #AAAAAA;
+    cursor: not-allowed;
+  }
+  .free{
+    background-color: green;
+    cursor: pointer;
+  }

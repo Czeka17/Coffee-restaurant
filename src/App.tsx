@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import MenuPage from './pages/menuPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import ReservationPage from './pages/ReservationPage';
 
 const App: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const App: React.FC = () => {
           <Route path="/menu" element={<MenuPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/reservation" element={<ReservationPage />} />
         </Routes>
 
         <PageTransition />

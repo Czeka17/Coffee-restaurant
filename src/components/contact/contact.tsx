@@ -1,6 +1,7 @@
 import Header from '../header/header';
 import Reservation from '../reservation/reservation';
 import classes from './contact.module.css'
+import ContactForm from './contactForm';
 
 function Contact(){
     return  <div>
@@ -9,7 +10,7 @@ function Contact(){
         <Reservation/>
        </div>
        <div>
-        
+        <ContactForm />
        </div>
     </div>
 }
