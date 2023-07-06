@@ -12,9 +12,9 @@ function Footer(){
 NY 10160, New York, USA</p><p>1 234 567 890</p></div>
        <div>
        <div><p>Opening Hours</p><div className={classes.openingHours}><BiTime/><div>
-        <p>Sunday to Wednesday</p><p>9AM - 10.30PM</p></div></div></div>
+        <p>Sunday to Wednesday</p><p>7AM - 6.30PM</p></div></div></div>
         <div><div className={classes.openingHours}><BiTime/><div>
-        <p>Thursday, Friday, Saturday</p><p>9AM - 12.30AM</p></div></div></div>
+        <p>Thursday, Friday, Saturday</p><p>8AM - 9.30AM</p></div></div></div>
         <Button>RESERVATION</Button>
        </div>
         </div>

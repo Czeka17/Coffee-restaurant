@@ -19,7 +19,7 @@ function Navigation(){
                 </li>
                 </div>
                 <li>
-                    Reservation
+                    <NavLink className={classes.navLink} to='/reservation'>Reservation</NavLink>
                 </li>
             </ul>
         </nav>
