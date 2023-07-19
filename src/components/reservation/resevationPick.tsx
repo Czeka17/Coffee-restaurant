@@ -4,7 +4,8 @@ import React, { useState, ChangeEvent, useEffect } from 'react';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getDatabase, ref, push, query, orderByChild, equalTo, onValue, off } from 'firebase/database';
-
+import { openingHours } from "../../openingHours/openingHours";
+import ContactModal from "../contact/contactModal";
 const firebaseConfig = {
   apiKey: "AIzaSyCu6erLV-7g2jVrkHkF9vOPRgZLuX84dMo",
   authDomain: "coffee-restaurant-ca1d9.firebaseapp.com",
@@ -18,15 +19,11 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
 interface OpeningHour {
     day: string;
     startTime: string;
     endTime: string;
-  }
-  interface ReservedHour {
-    hour: string;
   }
   interface Reservation {
     date: string;
@@ -40,26 +37,25 @@ interface OpeningHour {
 function ReservationPick(){
     const today = new Date().toISOString().split('T')[0];
     
-    const openingHours: OpeningHour[] = [
-        { day: 'Sunday', startTime: '07:00', endTime: '18:30' },
-        { day: 'Monday', startTime: '07:00', endTime: '18:30' },
-        { day: 'Tuesday', startTime: '07:00', endTime: '18:30' },
-        { day: 'Wednesday', startTime: '07:00', endTime: '18:30' },
-        { day: 'Thursday', startTime: '08:00', endTime: '21:30' },
-        { day: 'Friday', startTime: '08:00', endTime: '21:30' },
-        { day: 'Saturday', startTime: '08:00', endTime: '21:30' },
-      ];
+
 
   const [selectedDate, setSelectedDate] = useState<string>('');
   const [availableHours, setAvailableHours] = useState<string[]>([]);
   const [hourSelected, setHourSelected] = useState(false)
   const [hourOfReservation, setHourOfReservation] = useState('')
   const [existingReservations, setExistingReservations] = useState<Reservation[]>([]);
-  const [numberOfCustomers, setNumberOfCustomers] = useState<number>(1);
+  const [numberOfCustomers, setNumberOfCustomers] = useState<number>(0);
 
   const [name, setName] = useState('');
 const [email, setEmail] = useState('');
 const [phone, setPhone] = useState('');
+const [showModal,setShowModal] = useState(false)
+const [response,setResponse] = useState('')
+const [responseParagraph, setResponseParagraph] = useState('')
+
+const hideModalHandler = () => {
+  setShowModal(false)
+}
 
 useEffect(() => {
   const database = getDatabase();
@@ -104,6 +100,24 @@ useEffect(() => {
     const selectedDate = event.target.value;
     setSelectedDate(selectedDate);
   
+    if(selectedDate === today){
+      const now = new Date();
+      const currentHour = now.getHours();
+    const currentMinute = now.getMinutes();
+    const availableHoursToday = availableHours.filter((hour) => {
+      const [hourStr, minuteStr] = hour.split(':');
+      const hourInt = parseInt(hourStr, 10);
+      const minuteInt = parseInt(minuteStr, 10);
+      if (hourInt > currentHour) {
+        return true;
+      } else if (hourInt === currentHour && minuteInt >= currentMinute) {
+        return true;
+      }
+      return false;
+    });
+    setAvailableHours(availableHoursToday);
+    return
+    }
     const selectedDay = openingHours.find(
       (hour) => hour.day.toLowerCase() === getDayOfWeek(selectedDate).toLowerCase()
     );
@@ -124,7 +138,7 @@ useEffect(() => {
   
         availableHours.push(formattedTime);
   
-        current.setMinutes(current.getMinutes() + 30);
+        current.setMinutes(current.getMinutes() + 60);
       }
   
       setAvailableHours(availableHours);
@@ -149,6 +163,9 @@ useEffect(() => {
   };
 
   const saveReservation = (event: React.FormEvent) => {
+    if(!name || !email || !phone || !email.includes('@')){
+      return;
+    }
     event.preventDefault();
     const reservation = {
       date: selectedDate,
@@ -175,7 +192,9 @@ useEffect(() => {
   
     push(ref(database, 'reservations'), reservation)
       .then(() => {
-        console.log('Reservation saved successfully!');
+        setShowModal(true)
+        setResponse('Success!')
+        setResponseParagraph('Your table has been reserved successfully!')
         setName('');
         setEmail('');
         setPhone('');
@@ -184,7 +203,9 @@ useEffect(() => {
         setSelectedDate('');
       })
       .catch((error) => {
-        console.error('Error saving reservation:', error);
+        setShowModal(true)
+        setResponse('Error!')
+        setResponseParagraph('Failed to connect to database!')
       });
   };
   
@@ -198,8 +219,10 @@ useEffect(() => {
   <select
     id="numberOfCustomers"
     value={numberOfCustomers}
-    onChange={(e) => setNumberOfCustomers(Number(e.target.value))}
+    onChange={(e) =>
+      setNumberOfCustomers(Number(e.target.value))}
   >
+    <option value="">Select</option>
     <option value={1}>1</option>
     <option value={2}>2</option>
     <option value={3}>3</option>
@@ -207,15 +230,16 @@ useEffect(() => {
     <option value={5}>5</option>
     <option value={6}>6</option>
   </select>
+  <p>For reservation above 6 customers please contact us here : 324 567 890</p>
 </div>
 
-      <div className={classes.date}>
+      {numberOfCustomers > 0 && <div className={classes.date}>
         <label htmlFor="date">Date</label>
         <input type="date" id="datePicker" min={today} onChange={handleDateChange} />
-      </div>
+      </div>}
       {selectedDate && (
-        <div>
-          <label htmlFor="hour">Available Hours</label>
+        <div className={classes.availableHours}>
+          <p>Available Hours</p>
           {availableHours.length > 0 ? (
             <ul className={classes.hoursList}>
               {availableHours.map((hour) => (
@@ -248,6 +272,7 @@ useEffect(() => {
 </form>
 </div>}
       </AppWrapper>
+      {showModal && <ContactModal response={response} responseParagraph={responseParagraph} hideModalHandler={hideModalHandler} />}
     </div>
 }
 export default ReservationPick

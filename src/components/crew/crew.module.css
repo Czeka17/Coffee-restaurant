@@ -12,6 +12,7 @@
 .crewContainer img{
     width: 100%;
     height: 100%;
+    transition: 0.5s;
 }
 .crewLeftSide{
     width: 50%;
@@ -29,4 +30,33 @@
 }
 .imageContainer3{
     padding: 0 0 4em 4em;
+}
+.crewContainer img:hover{
+    transform: scale(1.1);
+}
+
+@media (max-width:1024px) {
+    .crewContainer{
+        flex-direction: column;
+        gap: 0
+    }
+    .crewLeftSide{
+        width: 100%;
+    }
+    .crewRightSide{
+        width: 100%;
+    }
+    .imageContainer{
+        padding: 2em;
+    }
+    .imageContainer1{
+        padding: 2em;
+    }
+    .imageContainer3{
+        padding: 2em;
+    }
+    .crewText{
+        text-align: center;
+        padding: 1em;
+    }
 }

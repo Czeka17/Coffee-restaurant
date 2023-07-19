@@ -63,3 +63,17 @@
     padding: 1em;
     text-align: center;
 }
+
+@media (max-width:1024px){
+    .reviews{
+        width: 100%;
+        flex-direction: column;
+        padding: 0;
+        bottom:30%
+    }
+    .review{
+        width: 100%;
+        padding: 2em 0;
+        margin: 2em 0;
+    }
+}

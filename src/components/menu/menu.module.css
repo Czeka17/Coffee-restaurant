@@ -53,3 +53,17 @@
     width: 40%;
 
 }
+
+@media (max-width:1024px){
+    .menuImage{
+        padding: 4em 2em;
+    }
+    .menuImageItems{
+        flex-direction: column;
+        gap: 0em;
+        width: 100%;
+    }
+    .menuImageText{
+        width: 100%;
+    }
+}

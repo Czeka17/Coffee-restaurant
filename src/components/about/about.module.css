@@ -43,3 +43,22 @@
 .aboutRightsideSecond img{
     width: 75%;
 }
+
+@media (max-width:1024px){
+    .about{
+        flex-direction: column;
+    }
+    .aboutLeftside{
+        padding: 0;
+        align-items: center;
+        text-align: center;
+    }
+    .aboutRightside{
+        padding: 0;
+        align-items: center;
+        text-align: center;
+    }
+    .about p{
+        padding: 1em;
+    }
+}

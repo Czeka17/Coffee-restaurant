@@ -45,3 +45,10 @@
     background: #915050;
     border-radius: 50%;
 }
+@media(max-width:1024px){
+    .footerContainer{
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+}

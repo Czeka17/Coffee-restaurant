@@ -12,7 +12,7 @@ function HomePage() {
   return (
   <>
    <Navigation/>
-   <Header bgi={process.env.PUBLIC_URL + '/header-_1_.webp'} headerText='CSSpresso: The perfect blend of caffeine and code' headerParagraph='A haven for IT professionals, CSSpresso is the ideal spot for a much-needed caffeine boost and coding session.' />
+   <Header bgi={process.env.PUBLIC_URL + '/header1.webp'} headerText='CSSpresso: The perfect blend of caffeine and code' headerParagraph='A haven for IT professionals, CSSpresso is the ideal spot for a much-needed caffeine boost and coding session.' />
   <About/>
   <Menu/>
   <Coffee/>

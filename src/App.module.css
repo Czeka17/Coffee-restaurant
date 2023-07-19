@@ -1,6 +1,7 @@
 .app {
   position: relative;
   width: 100%;
+  font-family: nunito;
 }
 
 .pageTransition {
