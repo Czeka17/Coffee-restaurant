@@ -1,7 +1,12 @@
 .navigation{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background: #404040;
     max-width: 100%;
     padding: 0.5em;
+    z-index: 9999;
 }
 .navigationList{
     display: flex;

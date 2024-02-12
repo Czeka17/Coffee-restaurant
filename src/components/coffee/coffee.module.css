@@ -1,60 +1,62 @@
-.coffeeSection{
-    margin: 3em 0;
+.coffeeSection {
+	margin: 3em 0;
+	padding: 1em;
 }
-.coffeeContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items:center;
-    gap: 1em;
-    padding: 1em;
-    width: 100%;
-    height: 100%;
+.coffeeContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+	width: 100%;
+	height: 100%;
 }
 .coffeeImage {
-    width: 100%;
-    height: 100%;
-    transition: 0.5s;
-    position: relative; 
-  }
-  
-  .coffeeImage img {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .coffeeImage:hover {
-    transform: rotateY(180deg);
-  }
-  
-  .imageOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transform: rotateY(180deg);
-    transition: opacity 0.3s ease;
-  }
-  .imageOverlay p{
-    padding: 1em;
-  }
-  
-  .coffeeImage:hover .imageOverlay {
-    opacity: 1;
-  }
-  
-@media (max-width:1024px){
-    .coffeeContainer{
-        padding: 0;
-    }
+	width: 100%;
+	height: 100%;
+	transition: 0.5s;
+	position: relative;
+}
+
+.coffeeImage img {
+	width: 100%;
+	height: 100%;
+}
+
+.imageOverlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 1em 0;
+	width: 100%;
+	max-height: 100%;
+	height: 15%;
+	background-color: rgba(0, 0, 0, 0.7);
+	color: #fff;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	opacity: 1;
+	transition: 0.3s all;
+}
+.imageOverlay p {
+	padding: 0.5em;
+}
+
+.coffeeImage:hover .imageOverlay {
+	height: 50%;
+	align-items: flex-end;
+}
+.coffeeImage:hover {
+	transform: scale(1.02);
+}
+
+@media (max-width: 1024px) {
+	.coffeeSection {
+		padding: 1em;
+	}
+	.coffeeContainer {
+		flex-direction: column;
+	}
 }

@@ -8,6 +8,31 @@
     justify-content: center;
     color: black;
 }
+.reservationCustomersSelect{
+  border: 2px solid black;
+  transition: all 0.3s;
+  padding: 1em 3em;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.reservationCustomersSelect option{
+  text-align: center;
+  padding: 1em 3em;
+}
+.reservationCustomersSelect option:checked{
+  background: white;
+  color: black;
+}
+.reservationCustomersSelect option:hover{
+  background: white;
+  color: black;
+}
+.reservationCustomersSelect:hover{
+  background: black;
+  color: white;
+  cursor: pointer;
+}
 .date{
     display: flex;
     flex-direction: column;
@@ -36,10 +61,20 @@
     padding: 5px;
     text-align: center;
     border: 1px solid #404040;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .hoursList li:hover{
+    background: #1A1A1A;
+    color: white;
   }
   .reserved{
     background-color: #1A1A1A;
     color: gray;
+    cursor: not-allowed;
+  }
+  .reserved:hover{
+    color: gray!important;
     cursor: not-allowed;
   }
   .free{

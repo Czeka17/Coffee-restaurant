@@ -100,24 +100,6 @@ useEffect(() => {
     const selectedDate = event.target.value;
     setSelectedDate(selectedDate);
   
-    if(selectedDate === today){
-      const now = new Date();
-      const currentHour = now.getHours();
-    const currentMinute = now.getMinutes();
-    const availableHoursToday = availableHours.filter((hour) => {
-      const [hourStr, minuteStr] = hour.split(':');
-      const hourInt = parseInt(hourStr, 10);
-      const minuteInt = parseInt(minuteStr, 10);
-      if (hourInt > currentHour) {
-        return true;
-      } else if (hourInt === currentHour && minuteInt >= currentMinute) {
-        return true;
-      }
-      return false;
-    });
-    setAvailableHours(availableHoursToday);
-    return
-    }
     const selectedDay = openingHours.find(
       (hour) => hour.day.toLowerCase() === getDayOfWeek(selectedDate).toLowerCase()
     );
@@ -142,6 +124,24 @@ useEffect(() => {
       }
   
       setAvailableHours(availableHours);
+      if(selectedDate === today){
+        const now = new Date();
+        const currentHour = now.getHours();
+      const currentMinute = now.getMinutes();
+      const availableHoursToday = availableHours.filter((hour) => {
+        const [hourStr, minuteStr] = hour.split(':');
+        const hourInt = parseInt(hourStr, 10);
+        const minuteInt = parseInt(minuteStr, 10);
+        if (hourInt > currentHour) {
+          return true;
+        } else if (hourInt === currentHour && minuteInt >= currentMinute) {
+          return true;
+        }
+        return false;
+      });
+      setAvailableHours(availableHoursToday);
+      return
+      }
     } else {
       setAvailableHours([]);
     }
@@ -217,6 +217,7 @@ useEffect(() => {
             <div className={classes.reservationContainer}>
   <label htmlFor="numberOfCustomers">Number of customers</label>
   <select
+  className={classes.reservationCustomersSelect}
     id="numberOfCustomers"
     value={numberOfCustomers}
     onChange={(e) =>
