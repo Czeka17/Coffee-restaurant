@@ -27,7 +27,7 @@ function AboutInfo() {
 					<div className={classes.aboutHeading}>
 						<div className={classes.aboutBenefits}>
 							<div className={classes.aboutBenefitsBox}>
-								<div className={classes.aboutBenefitsBoxIcon}>
+							<div className={classes.aboutBenefitsBoxIcon}>
 									<BsBox />
 								</div>
 								<div>
@@ -40,7 +40,7 @@ function AboutInfo() {
 							</div>
 							<hr />
 							<div className={classes.aboutBenefitsBox}>
-								<div className={classes.aboutBenefitsBoxIcon}>
+							<div className={classes.aboutBenefitsBoxIcon}>
 									<BsBox />
 								</div>
 								<div>
