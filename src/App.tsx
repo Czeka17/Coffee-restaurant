@@ -1,48 +1,69 @@
-import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import styles from './App.module.css';
-import HomePage from './pages/HomePage';
-import MenuPage from './pages/menuPage';
-import AboutPage from './pages/AboutPage';
-import ContactPage from './pages/ContactPage';
-import ReservationPage from './pages/ReservationPage';
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+	BrowserRouter as Router,
+	Routes,
+	Route,
+	useLocation,
+} from "react-router-dom";
+import styles from "./App.module.css";
+import HomePage from "./pages/HomePage";
+import MenuPage from "./pages/menuPage";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+import ReservationPage from "./pages/ReservationPage";
 
 const App: React.FC = () => {
-  return (
-    <div className={styles.app}>
-      <Router>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/menu" element={<MenuPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/reservation" element={<ReservationPage />} />
-        </Routes>
+	return (
+		<div className={styles.app}>
+			<Router>
+				
+					<Routes>
+						<Route
+							path='/'
+							element={
+             
+									<HomePage />
+								
+							}
+						/>
+						<Route
+							path='/menu'
+							element={
+					
+									<MenuPage />
+					
+							}
+						/>
+						<Route
+							path='/about'
+							element={
+						
+									<AboutPage />
+						
+							}
+						/>
+						<Route
+							path='/contact'
+							element={
 
-        <PageTransition />
-      </Router>
-    </div>
-  );
-};
+									<ContactPage />
+				
+							}
+						/>
+						<Route
+							path='/reservation'
+							element={
 
-const PageTransition: React.FC = () => {
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const location = useLocation();
-
-  useEffect(() => {
-    setIsTransitioning(true);
-
-    const timeout = setTimeout(() => {
-      setIsTransitioning(false);
-    }, 500);
-
-    return () => clearTimeout(timeout);
-  }, [location]);
-
-  return (
-    <div className={`${styles.pageTransition} ${isTransitioning ? styles.transitioning : ''}`}>
-    </div>
-  );
+									<ReservationPage />
+				
+							}
+						/>
+					</Routes>
+				
+			</Router>
+		</div>
+	);
 };
 
 export default App;

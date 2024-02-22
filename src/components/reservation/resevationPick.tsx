@@ -76,17 +76,15 @@ useEffect(() => {
 
   const listenForReservations = () => {
     const listener = onValue(reservationsQuery, reservationsListener);
-    return listener; // Return the listener
+    return listener;
   };
 
-  const unsubscribe = listenForReservations(); // Store the listener in a variable
-
+  const unsubscribe = listenForReservations(); 
   return () => {
-    unsubscribe(); // Call the unsubscribe function to remove the listener
+    unsubscribe();
   };
 }, [selectedDate]);
 useEffect(() => {
-  // Update the available hours based on existing reservations
   if (existingReservations.length > 0) {
     const reservedHours: string[] = [];
 

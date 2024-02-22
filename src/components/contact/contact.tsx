@@ -18,9 +18,6 @@ function Contact() {
 					<Reservation />
 				</div>
 				<div className={classes.contactPosition}>
-					<div className={classes.mapContainer}>
-						<MapComponent />
-					</div>
 					<div className={classes.formContainer}>
 						<ContactForm />
 					</div>

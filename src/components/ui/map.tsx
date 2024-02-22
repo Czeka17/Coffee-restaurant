@@ -11,7 +11,7 @@ const MapComponent: React.FC = () => {
 				center={position}
 				zoom={zoom}
 				scrollWheelZoom={false}
-				style={{ width: "500px", height: "300px" }}
+				style={{ width: "250px", height: "250px" }}
 			>
 				<TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
 			</MapContainer>

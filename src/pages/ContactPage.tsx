@@ -3,7 +3,7 @@ import Footer from "../components/footer/footer";
 import Navigation from "../components/ui/navigation";
 
 function ContactPage(){
-    return <section>
+    return <section >
         <Navigation/>
         <Contact/>
         <Footer/>

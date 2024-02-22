@@ -1,6 +1,7 @@
 import classes from './contactForm.module.css'
 import { useState, ChangeEvent} from 'react';
 import ContactModal from './contactModal';
+
 function ContactForm(){
 
   const [name, setName] = useState('');
@@ -47,10 +48,13 @@ function ContactForm(){
       setResponse('Success!')
       setResponseParagraph('Message has been sent!')
       setShowModal(true)
+      setName('')
+      setEmail('')
+      setMessage('')
     }
   };
     return <div className={classes.card}>
-    <span className={classes.title}>Leave a Comment</span>
+    <span className={classes.title}>Contact us here</span>
     <form className={classes.form} onSubmit={sendEmail}>
       <div className={classes.group}>
       <input placeholder='‎' type="text" value={name} required={true} onChange={handleNameChange}/>

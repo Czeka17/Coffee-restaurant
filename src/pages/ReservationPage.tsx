@@ -9,7 +9,7 @@ const ReservationPage: React.FC = () => {
   
 
   return (
-    <section>
+    <section >
       <Navigation />
       <ReservationPick/>
       <Footer />
